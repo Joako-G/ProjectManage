@@ -7,14 +7,11 @@ export function Project ({ project, open, setOpen, setId }) {
   const navigate = useNavigate()
 
   const putProject = () => {
-    navigate(`/projects/${project.id}`)
+    navigate(`/${project.id}`)
   }
 
-  // ERROR AL MODIFICAR UN PROYECTO, EL ERROR ES QUE TAMBIEN SE MODIFICA LA FECHA DE CREACION DEL PROYECTO. ESTO ESTA MAL
-  // EL ATRIBUTO DEBE TOMAR EL VALOR DE CREACION DEL PROYECTO CUANDO SE ESTE MODIFICANDO UN PROYECTO
-
   return (
-    <div key={project.id} className='border-solid border-2 rounded-md m-5 p-5 md:w-[600px] flex'>
+    <div key={project.id} className='border-solid border-2 rounded-md p-5 w-[500px] flex lg:w-[480px] xl:w-[500px]'>
       <div className='flex-col space-y-5'>
         <h1 className='text-md'> {project.title} </h1>
         <h1 className='flex text-sm'> Creation:
@@ -23,7 +20,7 @@ export function Project ({ project, open, setOpen, setId }) {
           </p>
         </h1>
         <div className='flex items-center mb-2'>
-          <img className='rounded-full h-8 w-8 md:h-14 md:w-14 mr-5' src={project.user.imgUrl} alt='' />
+          <img className='rounded-full h-8 w-8 lg:h-14 lg:w-14 mr-5' src={project.user.imgUrl} alt='' />
           <h1 className='text-sm'> @{project.user.name + ' ' + project.user.lastname} </h1>
         </div>
       </div>

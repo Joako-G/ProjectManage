@@ -7,7 +7,7 @@ import { IconBack } from '../icons/Icons'
 
 function getDate () {
   const currentDate = new Date()
-  const date = currentDate.getDate() + '/' + currentDate.getMonth() + 1 + '/' + currentDate.getFullYear()
+  const date = currentDate.getDate() + '/' + (currentDate.getMonth() + 1) + '/' + currentDate.getFullYear()
   return date
 }
 
@@ -44,15 +44,16 @@ export function Form () {
       newProjects[newId - 1] = newProject
     }
 
+    window.localStorage.setItem('projects', JSON.stringify(newProjects))
     setProjects(newProjects)
-    navigate('/projects')
+    navigate('/')
   }
 
   return (
     <>
       <div className='flex items-center space-x-3 bg-[#950101]'>
         <div className='w-10 h-10'>
-          <Link className='block' to='/projects'> <IconBack /></Link>
+          <Link className='block' to='/'> <IconBack /></Link>
         </div>
         <h3> {id > 0 ? 'Modificar Proyecto' : 'Nuevo Proyecto'} </h3>
       </div>

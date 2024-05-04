@@ -6,9 +6,9 @@ function App () {
   return (
     <div className='min-h-screen bg-[#000000] text-white '>
       <Routes>
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/projects/newProject' element={<Form />} />
-        <Route path='/projects/:id' element={<Form />} />
+        <Route path='/' element={<Projects />} />
+        <Route path='/newProject' element={<Form />} />
+        <Route path='/:id' element={<Form />} />
       </Routes>
     </div>
   )
